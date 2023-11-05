@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="/CSS/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <nav class="flex-center">
+            <div class="logo">
+                <a href="index.html" class="logo-name">TheCakeShop</a>
+            </div>
+            <div class="nav-items">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="#" class="nav-item">Products</a>
+            </div>
+            <a href="#cart" class="cart-btn"><i class="fa-solid fa-cart-shopping"></i></a>
+            <div class="toggle-btn"><i class="fa-solid fa-bars"></i></div>
+        </nav>
+    </header>
+
+    <section class="contact">
+        <div class="contactus-form">
+            <form onsubmit="sendEmail(); reset(); return false;">
+                <h3>Get in Touch</h3>
+                <input type="text" id="name" placeholder="Name: Example Jon Doe" required>
+                <input type="email" id="email" placeholder="email: abc@email.com" required>
+                <input type="text" id="phone" placeholder="Phone no:" required>
+                <textarea  id="message" rows="4" placeholder="Send us your thoughts"></textarea>
+                <button type="submit" class="btn">Send</button>
+            </form>
+
+        </div>
+
+    </section>
+
+
+
+    <footer class="footer-flex">
+        <div class="row">
+            <a href="index.html" class="logo-name">TheCakeShop</a>
+            <div class="social-links">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+        </div>
+
+        <div class="row">
+            <p>Call us to order a special deliciousness!</p>
+            <p>+1- (xxx)-xxx-xxxx</p>
+            <p>
+                4420 Walnut St, Philadelphia, PA 19104
+            </p>
+        </div>
+
+        <div class="row">
+            <p>Sign Up for our Newsletter</p>
+            <input type="text" placeholder="e-mail: abc@gmail.com">
+            <a class="btn" href="#">Submit</a>
+        </div>
+
+        <div class="row">
+            <h3>Quick Links</h3>
+            <ul>
+                <li> <a href="#">FAQs</a></li>
+                <li> <a href="/HTML/products.html">Products</a></li>
+                <li> <a href="/HTML/index.html">Home</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail(){
+            Email.send({
+                    Host : "smtp.gmail.com",
+                    Username : "karapaanilkumar3494@gmail.com",
+                    Password : "9492661973",
+                    To : 'karapaanilkumar3494@gmail.com',
+                    From : document.getElementById("email").value,
+                    Subject : "New Customer",
+                    Body : "Body"
+                }).then(
+                message => alert(message)
+                );
+        }
+    </script>
+    
+</body>
+</html>
